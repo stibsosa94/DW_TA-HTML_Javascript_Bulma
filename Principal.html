@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    >
+    <script src="JAVA.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <h2 class="gestor_tareas title is-2">Gestor Tareas</h2>
+            <button class="js-modal-trigger button" data-target="nuevaTarea-modal">Agregar Tarea</button>
+            <br />
+
+            <div class="columns is-mobile">
+                <div class="main_columns column">
+                    <h2>Backlog</h2>
+                    <ul id="backlog_list"></ul>
+                    
+                </div>
+                <div class="main_columns column">
+                    <h2>To Do</h2>
+                    <ul id="toDo_list"></ul>
+                    
+                </div>
+                <div class="main_columns column">
+                    <h2>In Progress</h2>
+                    <ul id="inProgress_list"></ul>
+                    
+                </div>
+                <div class="main_columns column">
+                    <h2>Bloked</h2>
+                    <ul id="bloked_list"></ul>
+                    
+                </div>
+                <div class="main_columns column">
+                    <h2>Done</h2>
+                    <ul id="done_list"></ul>
+                    
+                </div>
+            </div>
+         
+        </div>
+    </div>
+
+        <div id="nuevaTarea-modal" class="modal">
+            <div class="modal-background"></div>
+        
+            <div class="modal-content">
+                <div class="full-height">
+                    <div class="box">
+                    <form class="main__form">
+                        <div class="main__form__body">
+                            <h2 class="title is-2">Nueva Tarea</h2>
+                            <div class="columns is-mobile">
+                                <div class="column">
+                                    <div class="main__form__item">
+                                        <label class="label">Titulo</label>
+                                        <div class="control">
+                                            <input class="titulo" required type="text" placeholder="Ej: Tarea 1" />
+                                        </div>
+                                    </div>
+                                    <div class="main__form__item">
+                                        <label class="label">Asignado</label>
+                                        <div class="control">
+                                            <input class="asignado" required type="text" placeholder="Ej: Persona 1" />
+                                        </div>
+                                    </div>
+                                    <div class="main__form__item">
+                                        <label class="label">Estado</label>
+                                        <div class="control">
+                                            <input class="estado" required type="text" placeholder="Ej: Backlog" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-mobile">
+                                    <div class="main__form__item">
+                                        <label class="label">Descripción</label>
+                                        <div class="control">
+                                            <input class="descripcion" required type="text" placeholder="Ej: Descripción tarea 1" />
+                                        </div>
+                                    </div>
+                                    <div class="main__form__item">
+                                        <label class="label">Prioridad</label>
+                                        <div class="control">
+                                            <input class="prioridad" required type="text" placeholder="Ej: Media" />
+                                        </div>
+                                    </div>
+                                    <div class="main__form__item">
+                                        <label class="label">Fecha Límite</label>
+                                        <div class="control">
+                                            <input class="fechalimite" required type="date" placeholder="Ej: dd/mm/aaaa" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <br />
+                        </div>
+                        <div class="main__form__buttons">
+                        <button class="cancel-button button is-normal" id="cancelarTarea">Cancelar</button>
+                        <button type="submit" class="submit-button button is-normal" id="aceptarTarea">Aceptar</button>
+                        </div>
+                    </form>
+                    </div>
+                    </div>
+            </div>
+        
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+
+        <div id="editarTarea-modal" class="modal">
+            <div class="modal-background"></div>
+        
+            <div class="modal-content">
+                <div class="full-height">
+                    <div class="box">
+                    <form class="main__form">
+                        <div class="main__form__body">
+                            <h2 class="title is-2">Editar Tarea</h2>
+                            <div class="columns is-mobile">
+                                <div class="column">
+                                    <div class="main__form__item">
+                                        <label class="label">Titulo</label>
+                                        <div class="control">
+                                            <input class="titulo" required type="text" placeholder="Ej: Tarea 1" />
+                                        </div>
+                                    </div>
+                                    <div class="main__form__item">
+                                        <label class="label">Asignado</label>
+                                        <div class="control">
+                                            <input class="asignado" required type="text" placeholder="Ej: Persona 1" />
+                                        </div>
+                                    </div>
+                                    <div class="main__form__item">
+                                        <label class="label">Estado</label>
+                                        <div class="control">
+                                            <input class="estado" required type="text" placeholder="Ej: Backlog" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-mobile">
+                                    <div class="main__form__item">
+                                        <label class="label">Descripción</label>
+                                        <div class="control">
+                                            <input class="descripcion" required type="text" placeholder="Ej: Descripción tarea 1" />
+                                        </div>
+                                    </div>
+                                    <div class="main__form__item">
+                                        <label class="label">Prioridad</label>
+                                        <div class="control">
+                                            <input class="prioridad" required type="text" placeholder="Ej: Media" />
+                                        </div>
+                                    </div>
+                                    <div class="main__form__item">
+                                        <label class="label">Fecha Límite</label>
+                                        <div class="control">
+                                            <input class="fechalimite" required type="date" placeholder="Ej: dd/mm/aaaa" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <br />
+                        </div>
+                        <div class="main__form__buttons">
+                        <button class="cancel-button button is-normal" id="cancelarTarea">Cancelar</button>
+                        <button type="submit" class="submit-button button is-normal" id="aceptarTarea">Aceptar</button>
+                        </div>
+                    </form>
+                    </div>
+                    </div>
+            </div>
+        
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+</body>
+</html>

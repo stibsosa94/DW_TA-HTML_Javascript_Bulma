@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    >
+    <title>Document</title>
+</head>
+<body>
+    <form class="main__form box">
+        <div class="main__form__body">
+            <h2 class="gestor_tareas title is-2">Editar Tarea</h2>
+            <div class="columns is-mobile">
+                <div class="column">
+                    <div class="main__form__item">
+                        <label>Titulo</label>
+                        <input id="titulo" required type="text" />
+                    </div>
+                    <div class="main__form__item">
+                        <label>Asignado</label>
+                        <input id="asignado" required type="text" />
+                    </div>
+                    <div class="main__form__item">
+                        <label>Estado</label>
+                        <input id="estado" required type="text" />
+                    </div>
+                </div>
+                <div class="column is-mobile">
+                    <div class="main__form__item">
+                        <label>Descripción</label>
+                        <input id="descripcion" required type="text" />
+                    </div>
+                    <div class="main__form__item">
+                        <label>Prioridad</label>
+                        <input id="prioridad" required type="text" />
+                    </div>
+                    <div class="main__form__item">
+                        <label>Fecha límite</label>
+                        <input id="fechalimite" required type="date" />
+                    </div>
+                </div>
+            </div>
+          <br />
+        </div>
+        <div class="main__form__buttons">
+          <button class="cancel-button button is-normal" id="cancelarTarea">Cancelar</button>
+          <button type="submit" class="submit-button button is-normal" id="aceptarTarea">Aceptar</button>
+        </div>
+      </form>
+</body>
+</html>

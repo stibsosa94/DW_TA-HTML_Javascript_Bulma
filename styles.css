@@ -1,0 +1,12 @@
+.main_columns{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: solid black 3px;
+    padding: 2vw;
+    background-color: white;
+    margin: 1vh;
+    align-items: stretch;
+    justify-content: space-between;
+    flex: 1 1 300px;
+  }
